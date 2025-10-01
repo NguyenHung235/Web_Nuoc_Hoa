@@ -1,0 +1,70 @@
+<!-- <?php
+include'database.php';
+$data = [["firstname" => "Mary", "lastname" => "Johnson", "age" => 25],["firstname" => "Amanda", "lastname" => "Miller", "age" => 18]];
+  
+$filename = "filedetail". date("Y-m-d-H-i-s").".xls";
+header('Content-Type: application/vnd.ms-excel'); 
+header('Content-Disposition: attachment;filename="'.$filename.'"');
+header('Cache-Control: max-age=0'); 
+$flag = false;
+  foreach($data as $row) {
+    if(!$flag) {
+      // display field/column names as first row
+      echo implode("\t", array_keys($row)) . "\r\n";
+      $flag = true;
+    }
+    echo implode("\t", array_values($row)) . "\r\n";
+  }
+  exit;
+?> -->
+
+<!-- header('Content-type: application/vnd-ms-excel'); -->
+<!-- header('Content-type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'); -->
+<!-- $filename="order_detail.xls";
+header("Content-Disposition: attachment; filename=\"$fileName\""); 
+header("Content-Type: application/vnd.ms-excel");
+header('Content-Dispostion:attachment;filename=\$filename\''); -->
+<!-- $filename = "filedetail". date("Y-m-d-H-i-s").".xlsx";
+header('Content-Type: application/vnd.ms-excel'); 
+header('Content-Disposition: attachment;filename="'.$filename.'"');
+header('Cache-Control: max-age=0'); 
+$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
+$objWriter->save('php://output'); -->
+<!-- <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>ID</th>
+                            <th>Order_id</th>
+                            <th>Product_id</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $sn=1;
+                        $order_detail_qry = "SELECT * from tbl_order_detail";
+                        $order_detail_res = mysqli_query($con,$order_detail_qry);
+                        while($order_detail_data=mysqli_fetch_assoc($order_detail_res))
+                        {
+                            ?>
+                            <tr>
+                                <td><?php echo $sn; ?></td>
+                                <td><?php echo $order_detail_data['id']; ?> </td>
+                                <td><?php echo $order_detail_data['order_id']; ?> </td>
+                                <td><?php echo $order_detail_data['product_id']; ?> </td>
+                                <td><?php echo $order_detail_data['quantity']; ?> </td>
+                                <td><?php echo $order_detail_data['price']; ?> </td>
+                                <td><?php echo $order_detail_data['status']; ?> </td>
+                            </tr>
+                            <?php
+                            $sn++;
+                        }
+                        ?>
+                    </tbody>
+                </table>
+             -->
+
+<!-- 
